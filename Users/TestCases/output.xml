@@ -1,0 +1,2240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20150827 10:27:06.702" generator="Robot 2.9 (Python 2.7.6 on win32)">
+<suite source="C:\Users\Aliaksandra_Pronichk\robot-python-hw\Users\TestCases\UserLogin.robot" id="s1" name="UserLogin">
+<test id="s1-t1" name="TC1_New_created_user_able_to login">
+<kw type="setup" name="Generate User Data And Create User">
+<kw name="Generate User Data" library="UserDataGenerator">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${userName}</var>
+</assign>
+<msg timestamp="20150827 10:27:07.173" level="INFO">${userName} = diUtwQ</msg>
+<status status="PASS" endtime="20150827 10:27:07.173" starttime="20150827 10:27:07.169"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>7</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${userRandomPassword}</var>
+</assign>
+<msg timestamp="20150827 10:27:07.176" level="INFO">${userRandomPassword} = v2Lcay1</msg>
+<status status="PASS" endtime="20150827 10:27:07.176" starttime="20150827 10:27:07.174"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>U1${userRandomPassword}</arg>
+</arguments>
+<assign>
+<var>${userPassword}</var>
+</assign>
+<msg timestamp="20150827 10:27:07.179" level="INFO">${userPassword} = U1v2Lcay1</msg>
+<status status="PASS" endtime="20150827 10:27:07.180" starttime="20150827 10:27:07.177"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}@clarabridge.com</arg>
+</arguments>
+<assign>
+<var>${userEmail}</var>
+</assign>
+<msg timestamp="20150827 10:27:07.183" level="INFO">${userEmail} = diUtwQ@clarabridge.com</msg>
+<status status="PASS" endtime="20150827 10:27:07.183" starttime="20150827 10:27:07.181"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<assign>
+<var>${firstName}</var>
+</assign>
+<msg timestamp="20150827 10:27:07.186" level="INFO">${firstName} = diUtwQ</msg>
+<status status="PASS" endtime="20150827 10:27:07.186" starttime="20150827 10:27:07.184"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<assign>
+<var>${lastName}</var>
+</assign>
+<msg timestamp="20150827 10:27:07.189" level="INFO">${lastName} = diUtwQ</msg>
+<status status="PASS" endtime="20150827 10:27:07.189" starttime="20150827 10:27:07.187"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:07.192" level="INFO">${userName} = diUtwQ</msg>
+<status status="PASS" endtime="20150827 10:27:07.192" starttime="20150827 10:27:07.190"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userPassword}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:07.194" level="INFO">${userPassword} = U1v2Lcay1</msg>
+<status status="PASS" endtime="20150827 10:27:07.195" starttime="20150827 10:27:07.193"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userEmail}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:07.197" level="INFO">${userEmail} = diUtwQ@clarabridge.com</msg>
+<status status="PASS" endtime="20150827 10:27:07.198" starttime="20150827 10:27:07.196"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${firstName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:07.200" level="INFO">${firstName} = diUtwQ</msg>
+<status status="PASS" endtime="20150827 10:27:07.201" starttime="20150827 10:27:07.199"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${lastName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:07.203" level="INFO">${lastName} = diUtwQ</msg>
+<status status="PASS" endtime="20150827 10:27:07.204" starttime="20150827 10:27:07.202"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:07.205" starttime="20150827 10:27:07.168"></status>
+</kw>
+<kw name="Create User API" library="UserAPI">
+<kw name="Create User Object" library="Libs">
+<arguments>
+<arg>${userName}</arg>
+<arg>${userPassword}</arg>
+<arg>${userEmail}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20150827 10:27:07.209" level="INFO">${user} = {'id': None, 'autoRefreshEnabled': None, 'zip': None, 'state': None, 'address1': None, 'accountId': 0, 'company': None, 'liteUser': None, 'jobTitle': None, 'address2': None, 'phone': None, 'autoRefres...</msg>
+<status status="PASS" endtime="20150827 10:27:07.210" starttime="20150827 10:27:07.207"></status>
+</kw>
+<kw name="Create User" library="Libs">
+<arguments>
+<arg>${HOST}</arg>
+<arg>${PORT}</arg>
+<arg>${ADMIN_USER}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+<arg>${user}</arg>
+</arguments>
+<assign>
+<var>${userId}</var>
+</assign>
+<msg timestamp="20150827 10:27:07.238" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20150827 10:27:08.372" level="INFO">${userId} = 1853</msg>
+<status status="PASS" endtime="20150827 10:27:08.373" starttime="20150827 10:27:07.210"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${userId}</arg>
+</arguments>
+<assign>
+<var>${user.userId}</var>
+</assign>
+<msg timestamp="20150827 10:27:08.375" level="INFO">${user.userId} = 1853</msg>
+<status status="PASS" endtime="20150827 10:27:08.376" starttime="20150827 10:27:08.374"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:08.378" level="INFO">${user} = {'userId': 1853, 'id': None, 'autoRefreshEnabled': None, 'zip': None, 'state': None, 'address1': None, 'accountId': 0, 'company': None, 'liteUser': None, 'jobTitle': None, 'address2': None, 'phone': N...</msg>
+<status status="PASS" endtime="20150827 10:27:08.379" starttime="20150827 10:27:08.377"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:08.380" starttime="20150827 10:27:07.205"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:08.381" starttime="20150827 10:27:07.166"></status>
+</kw>
+<kw name="Login UI" library="LoginUI">
+<arguments>
+<arg>${CMP_LOGIN_URL}</arg>
+<arg>${WEB_BROWSER}</arg>
+<arg>${user.login}</arg>
+<arg>${user.password}</arg>
+</arguments>
+<kw name="Open Login Page" library="LoginUI">
+<arguments>
+<arg>${loginUrl}</arg>
+<arg>${browser}</arg>
+</arguments>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${SELENIUM_SPEED}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:08.389" starttime="20150827 10:27:08.387"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets Selenium 2's default implicit wait in seconds and</doc>
+<arguments>
+<arg>${IMPLICIT_WAIT}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:08.391" starttime="20150827 10:27:08.390"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="Selenium2Library">
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<arguments>
+<arg>${SELENIUM_DEFAULT_TIMEOUT}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:08.394" starttime="20150827 10:27:08.392"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${loginUrl}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:08.396" level="INFO">Opening browser 'firefox' to base url 'http://localhost:18081/cmp/login'</msg>
+<status status="PASS" endtime="20150827 10:27:15.241" starttime="20150827 10:27:08.395"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20150827 10:27:15.504" starttime="20150827 10:27:15.242"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:16.241" level="INFO">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;
+  &lt;title&gt;
+
+
+
+
+
+
+
+
+
+	
+    
+        
+    	
+	
+
+
+Clarabridge Analyze
+
+&lt;/title&gt;
+  &lt;link type="image/x-icon" rel="icon" href="images/favicon.ico" /&gt;
+  &lt;link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico" /&gt;
+  &lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /&gt;    
+  &lt;meta content="IE=9" http-equiv="X-UA-Compatible" /&gt;
+  &lt;link href="css/style.css?b=" rel="stylesheet" /&gt;
+  &lt;script type="text/javascript" language="JavaScript" src="javascript/script.js"&gt;&lt;/script&gt;
+  &lt;style&gt;
+
+	html, body{
+		height:100%;
+		width:100%;
+		padding:0;
+		margin:0;
+	}
+
+	input[type=text], input[type=password] {
+		width: 150px;
+	}
+
+	#contaner{
+		width:100%;
+		margin:0 auto;
+		min-height:100%;
+		position:relative;
+		overflow:hidden;
+	}
+
+	*html #container{
+		height:100%;
+	}
+
+	#empty{
+		height:30px;
+	}
+
+	#footer{
+		min-height:23px;
+		margin:-30px auto 0;
+		width:100%;
+		position:relative;
+		text-align:center;
+		padding-top:7px;
+		height:23px;
+	}
+
+
+  &lt;/style&gt;
+
+
+&lt;/head&gt;
+&lt;body&gt;
+
+
+
+&lt;div id="contaner"&gt;
+				&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+				&lt;tbody&gt;&lt;tr height="55px" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="3" border="0" width="100%" height="100%" class="loginHeader"&gt;
+							&lt;tbody&gt;&lt;tr valign="middle"&gt;
+								&lt;!-- NAME --&gt;
+								&lt;td width="15%" valign="middle" style="padding-left:10px"&gt;
+									&lt;div style="position:relative;float:left"&gt;
+										&lt;a href="projects"&gt;&lt;img border="0" alt="" src="images/logo.gif?b=" /&gt;&lt;/a&gt;
+									&lt;/div&gt;
+								&lt;/td&gt;
+								&lt;!-- /NAME --&gt;
+								&lt;!-- TOP --&gt;
+								&lt;td valign="middle"&gt;
+									
+								&lt;/td&gt;
+								
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+				&lt;tr height="5px" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+							&lt;tbody&gt;&lt;tr&gt;
+								&lt;td class="delimiterGradiented"&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+				&lt;tr height="100%" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+				&lt;tbody&gt;&lt;tr&gt;
+					&lt;td width="100%" valign="top" height="100%"&gt;
+
+
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+							&lt;tbody&gt;&lt;tr&gt;
+								&lt;td&gt;
+									&lt;table cellspacing="0" cellpadding="0" border="0" width="100%"&gt;
+										&lt;tbody&gt;&lt;tr&gt;
+											&lt;!-- HISTORY --&gt;
+											&lt;td width="60%" valign="top"&gt;
+											&lt;/td&gt;
+											&lt;!-- /HISTORY --&gt;
+											&lt;td width="40%" valign="top" align="right"&gt;
+												&lt;!-- LINKS --&gt;
+												
+												&lt;!-- /LINKS--&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td width="100%" align="center" colspan="2"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td valign="top" align="left" colspan="2"&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;table cellspacing="0" cellpadding="0" border="0" width="100%"&gt;
+										&lt;tbody&gt;&lt;tr&gt;
+											&lt;td width="100%"&gt;
+												&lt;!-- SEARCH --&gt;
+												
+												&lt;!-- /SEARCH --&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr height="100%" width="100%"&gt;
+								&lt;td valign="top"&gt;
+
+									&lt;!-- TOP MESSAGE --&gt;
+										
+									&lt;!-- /TOP MESSAGE --&gt;
+									
+									&lt;!-- BODY --&gt;
+									&lt;div style="margin-top:10"&gt;
+											
+										&lt;div style="padding:5px;"&gt;
+										    
+											&lt;form method="POST" action="/cmp/j_acegi_security_check"&gt;
+											&lt;br /&gt;&lt;table&gt;
+												&lt;tbody&gt;&lt;tr&gt;
+													&lt;td&gt;User:&lt;/td&gt;
+													&lt;td colspan="2"&gt;&lt;input type="text" name="j_username" id="j_username" /&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+												&lt;tr&gt;
+													&lt;td&gt;Password:&lt;/td&gt;
+													&lt;td&gt;&lt;input type="password" autocomplete="off" name="j_password" /&gt;&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+											    &lt;tr&gt;
+											       &lt;td colspan="3"&gt;&lt;button onclick="submit()" class="gwt-Button" type="submit"&gt;Login&lt;/button&gt;&lt;/td&gt;
+											    &lt;/tr&gt;
+											
+											    &lt;tr&gt;
+											        
+      												&lt;td colspan="3"&gt; 
+      												    &lt;a style="color: black;" href="forgot_password.action?b="&gt;
+      												        Forgot password?
+      												    &lt;/a&gt;
+      												&lt;/td&gt;
+											    &lt;/tr&gt;
+											
+											&lt;/tbody&gt;&lt;/table&gt;
+											&lt;input type="hidden" name="locale" value="" /&gt;
+											&lt;/form&gt;
+											
+											&lt;script type="text/javascript"&gt;
+												&amp;lt;!--
+													document.getElementById("j_username").focus();
+												//--&amp;gt;
+												&lt;/script&gt;
+											    
+											&lt;/div&gt;
+											
+									&lt;/div&gt;
+									&lt;!-- /BODY --&gt;
+
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+			&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;&lt;/table&gt;
+		&lt;div style="clear:both"&gt;&lt;/div&gt;
+		&lt;div id="empty"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer" id="footer"&gt;
+	
+
+
+
+
+
+
+
+
+	
+
+
+	
+		Clarabridge Analyze, version 6.3.4.4#90544  © Copyright &lt;a target="_blank" href="http://www.clarabridge.com"&gt;Clarabridge&lt;/a&gt; 2005-2015
+		
+
+
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20150827 10:27:16.668" level="INFO">Current page contains button '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20150827 10:27:16.669" starttime="20150827 10:27:15.505"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:16.670" starttime="20150827 10:27:08.385"></status>
+</kw>
+<kw name="Login" library="LoginUI">
+<arguments>
+<arg>${login}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${USERNAME_TEXTBOX_LOCATOR}</arg>
+<arg>${login}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:16.674" level="INFO">Typing text 'diUtwQ' into text field 'j_username'</msg>
+<status status="PASS" endtime="20150827 10:27:17.433" starttime="20150827 10:27:16.673"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${PASSWORD_TEXTBOX_LOCATOR}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:17.436" level="INFO">Typing password into text field 'j_password'</msg>
+<status status="PASS" endtime="20150827 10:27:18.415" starttime="20150827 10:27:17.434"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:18.418" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20150827 10:27:19.839" starttime="20150827 10:27:18.416"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:19.841" starttime="20150827 10:27:16.671"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:19.843" starttime="20150827 10:27:08.382"></status>
+</kw>
+<kw name="Check That User Able To Login" library="LoginUI">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${LOGO}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:25.267" level="INFO">Current page contains element '//a[@class='logoLink']/img'.</msg>
+<status status="PASS" endtime="20150827 10:27:25.268" starttime="20150827 10:27:19.845"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:25.269" starttime="20150827 10:27:19.844"></status>
+</kw>
+<kw type="teardown" name="Close Browser And Delete User">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20150827 10:27:25.672" starttime="20150827 10:27:25.272"></status>
+</kw>
+<kw name="Delete User API" library="UserAPI">
+<kw name="Delete User" library="Libs">
+<arguments>
+<arg>${HOST}</arg>
+<arg>${PORT}</arg>
+<arg>${ADMIN_USER}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+<arg>${user.userId}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20150827 10:27:25.679" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20150827 10:27:26.734" level="INFO">${status} = Accepted</msg>
+<status status="PASS" endtime="20150827 10:27:26.735" starttime="20150827 10:27:25.675"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status}</arg>
+<arg>Accepted</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:26.737" starttime="20150827 10:27:26.735"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:26.738" starttime="20150827 10:27:25.673"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:26.739" starttime="20150827 10:27:25.270"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:26.741" critical="yes" starttime="20150827 10:27:07.164"></status>
+</test>
+<test id="s1-t2" name="TC2_Deleted_user_cannot_login">
+<kw type="setup" name="Generate User Data And Create User">
+<kw name="Generate User Data" library="UserDataGenerator">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${userName}</var>
+</assign>
+<msg timestamp="20150827 10:27:26.750" level="INFO">${userName} = EeaeAd</msg>
+<status status="PASS" endtime="20150827 10:27:26.751" starttime="20150827 10:27:26.749"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>7</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${userRandomPassword}</var>
+</assign>
+<msg timestamp="20150827 10:27:26.753" level="INFO">${userRandomPassword} = zGMhk9i</msg>
+<status status="PASS" endtime="20150827 10:27:26.754" starttime="20150827 10:27:26.751"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>U1${userRandomPassword}</arg>
+</arguments>
+<assign>
+<var>${userPassword}</var>
+</assign>
+<msg timestamp="20150827 10:27:26.757" level="INFO">${userPassword} = U1zGMhk9i</msg>
+<status status="PASS" endtime="20150827 10:27:26.757" starttime="20150827 10:27:26.754"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}@clarabridge.com</arg>
+</arguments>
+<assign>
+<var>${userEmail}</var>
+</assign>
+<msg timestamp="20150827 10:27:26.761" level="INFO">${userEmail} = EeaeAd@clarabridge.com</msg>
+<status status="PASS" endtime="20150827 10:27:26.761" starttime="20150827 10:27:26.758"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<assign>
+<var>${firstName}</var>
+</assign>
+<msg timestamp="20150827 10:27:26.764" level="INFO">${firstName} = EeaeAd</msg>
+<status status="PASS" endtime="20150827 10:27:26.764" starttime="20150827 10:27:26.762"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<assign>
+<var>${lastName}</var>
+</assign>
+<msg timestamp="20150827 10:27:26.767" level="INFO">${lastName} = EeaeAd</msg>
+<status status="PASS" endtime="20150827 10:27:26.768" starttime="20150827 10:27:26.765"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:26.770" level="INFO">${userName} = EeaeAd</msg>
+<status status="PASS" endtime="20150827 10:27:26.771" starttime="20150827 10:27:26.769"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userPassword}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:26.774" level="INFO">${userPassword} = U1zGMhk9i</msg>
+<status status="PASS" endtime="20150827 10:27:26.774" starttime="20150827 10:27:26.772"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userEmail}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:26.776" level="INFO">${userEmail} = EeaeAd@clarabridge.com</msg>
+<status status="PASS" endtime="20150827 10:27:26.777" starttime="20150827 10:27:26.775"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${firstName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:26.779" level="INFO">${firstName} = EeaeAd</msg>
+<status status="PASS" endtime="20150827 10:27:26.780" starttime="20150827 10:27:26.778"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${lastName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:26.782" level="INFO">${lastName} = EeaeAd</msg>
+<status status="PASS" endtime="20150827 10:27:26.783" starttime="20150827 10:27:26.781"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:26.784" starttime="20150827 10:27:26.747"></status>
+</kw>
+<kw name="Create User API" library="UserAPI">
+<kw name="Create User Object" library="Libs">
+<arguments>
+<arg>${userName}</arg>
+<arg>${userPassword}</arg>
+<arg>${userEmail}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20150827 10:27:26.789" level="INFO">${user} = {'id': None, 'autoRefreshEnabled': None, 'zip': None, 'state': None, 'address1': None, 'accountId': 0, 'company': None, 'liteUser': None, 'jobTitle': None, 'address2': None, 'phone': None, 'autoRefres...</msg>
+<status status="PASS" endtime="20150827 10:27:26.789" starttime="20150827 10:27:26.786"></status>
+</kw>
+<kw name="Create User" library="Libs">
+<arguments>
+<arg>${HOST}</arg>
+<arg>${PORT}</arg>
+<arg>${ADMIN_USER}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+<arg>${user}</arg>
+</arguments>
+<assign>
+<var>${userId}</var>
+</assign>
+<msg timestamp="20150827 10:27:26.794" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20150827 10:27:27.912" level="INFO">${userId} = 1854</msg>
+<status status="PASS" endtime="20150827 10:27:27.913" starttime="20150827 10:27:26.790"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${userId}</arg>
+</arguments>
+<assign>
+<var>${user.userId}</var>
+</assign>
+<msg timestamp="20150827 10:27:27.915" level="INFO">${user.userId} = 1854</msg>
+<status status="PASS" endtime="20150827 10:27:27.916" starttime="20150827 10:27:27.914"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:27.918" level="INFO">${user} = {'userId': 1854, 'id': None, 'autoRefreshEnabled': None, 'zip': None, 'state': None, 'address1': None, 'accountId': 0, 'company': None, 'liteUser': None, 'jobTitle': None, 'address2': None, 'phone': N...</msg>
+<status status="PASS" endtime="20150827 10:27:27.919" starttime="20150827 10:27:27.917"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:27.920" starttime="20150827 10:27:26.785"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:27.921" starttime="20150827 10:27:26.746"></status>
+</kw>
+<kw name="Delete User API" library="UserAPI">
+<kw name="Delete User" library="Libs">
+<arguments>
+<arg>${HOST}</arg>
+<arg>${PORT}</arg>
+<arg>${ADMIN_USER}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+<arg>${user.userId}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20150827 10:27:27.927" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20150827 10:27:28.979" level="INFO">${status} = Accepted</msg>
+<status status="PASS" endtime="20150827 10:27:28.979" starttime="20150827 10:27:27.924"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status}</arg>
+<arg>Accepted</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:28.982" starttime="20150827 10:27:28.980"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:28.983" starttime="20150827 10:27:27.922"></status>
+</kw>
+<kw name="Login UI" library="LoginUI">
+<arguments>
+<arg>${CMP_LOGIN_URL}</arg>
+<arg>${WEB_BROWSER}</arg>
+<arg>${user.login}</arg>
+<arg>${user.password}</arg>
+</arguments>
+<kw name="Open Login Page" library="LoginUI">
+<arguments>
+<arg>${loginUrl}</arg>
+<arg>${browser}</arg>
+</arguments>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${SELENIUM_SPEED}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:28.991" starttime="20150827 10:27:28.990"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets Selenium 2's default implicit wait in seconds and</doc>
+<arguments>
+<arg>${IMPLICIT_WAIT}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:28.994" starttime="20150827 10:27:28.992"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="Selenium2Library">
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<arguments>
+<arg>${SELENIUM_DEFAULT_TIMEOUT}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:28.996" starttime="20150827 10:27:28.995"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${loginUrl}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:28.998" level="INFO">Opening browser 'firefox' to base url 'http://localhost:18081/cmp/login'</msg>
+<status status="PASS" endtime="20150827 10:27:35.772" starttime="20150827 10:27:28.997"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20150827 10:27:36.003" starttime="20150827 10:27:35.773"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:36.728" level="INFO">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;
+  &lt;title&gt;
+
+
+
+
+
+
+
+
+
+	
+    
+        
+    	
+	
+
+
+Clarabridge Analyze
+
+&lt;/title&gt;
+  &lt;link type="image/x-icon" rel="icon" href="images/favicon.ico" /&gt;
+  &lt;link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico" /&gt;
+  &lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /&gt;    
+  &lt;meta content="IE=9" http-equiv="X-UA-Compatible" /&gt;
+  &lt;link href="css/style.css?b=" rel="stylesheet" /&gt;
+  &lt;script type="text/javascript" language="JavaScript" src="javascript/script.js"&gt;&lt;/script&gt;
+  &lt;style&gt;
+
+	html, body{
+		height:100%;
+		width:100%;
+		padding:0;
+		margin:0;
+	}
+
+	input[type=text], input[type=password] {
+		width: 150px;
+	}
+
+	#contaner{
+		width:100%;
+		margin:0 auto;
+		min-height:100%;
+		position:relative;
+		overflow:hidden;
+	}
+
+	*html #container{
+		height:100%;
+	}
+
+	#empty{
+		height:30px;
+	}
+
+	#footer{
+		min-height:23px;
+		margin:-30px auto 0;
+		width:100%;
+		position:relative;
+		text-align:center;
+		padding-top:7px;
+		height:23px;
+	}
+
+
+  &lt;/style&gt;
+
+
+&lt;/head&gt;
+&lt;body&gt;
+
+
+
+&lt;div id="contaner"&gt;
+				&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+				&lt;tbody&gt;&lt;tr height="55px" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="3" border="0" width="100%" height="100%" class="loginHeader"&gt;
+							&lt;tbody&gt;&lt;tr valign="middle"&gt;
+								&lt;!-- NAME --&gt;
+								&lt;td width="15%" valign="middle" style="padding-left:10px"&gt;
+									&lt;div style="position:relative;float:left"&gt;
+										&lt;a href="projects"&gt;&lt;img border="0" alt="" src="images/logo.gif?b=" /&gt;&lt;/a&gt;
+									&lt;/div&gt;
+								&lt;/td&gt;
+								&lt;!-- /NAME --&gt;
+								&lt;!-- TOP --&gt;
+								&lt;td valign="middle"&gt;
+									
+								&lt;/td&gt;
+								
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+				&lt;tr height="5px" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+							&lt;tbody&gt;&lt;tr&gt;
+								&lt;td class="delimiterGradiented"&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+				&lt;tr height="100%" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+				&lt;tbody&gt;&lt;tr&gt;
+					&lt;td width="100%" valign="top" height="100%"&gt;
+
+
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+							&lt;tbody&gt;&lt;tr&gt;
+								&lt;td&gt;
+									&lt;table cellspacing="0" cellpadding="0" border="0" width="100%"&gt;
+										&lt;tbody&gt;&lt;tr&gt;
+											&lt;!-- HISTORY --&gt;
+											&lt;td width="60%" valign="top"&gt;
+											&lt;/td&gt;
+											&lt;!-- /HISTORY --&gt;
+											&lt;td width="40%" valign="top" align="right"&gt;
+												&lt;!-- LINKS --&gt;
+												
+												&lt;!-- /LINKS--&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td width="100%" align="center" colspan="2"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td valign="top" align="left" colspan="2"&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;table cellspacing="0" cellpadding="0" border="0" width="100%"&gt;
+										&lt;tbody&gt;&lt;tr&gt;
+											&lt;td width="100%"&gt;
+												&lt;!-- SEARCH --&gt;
+												
+												&lt;!-- /SEARCH --&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr height="100%" width="100%"&gt;
+								&lt;td valign="top"&gt;
+
+									&lt;!-- TOP MESSAGE --&gt;
+										
+									&lt;!-- /TOP MESSAGE --&gt;
+									
+									&lt;!-- BODY --&gt;
+									&lt;div style="margin-top:10"&gt;
+											
+										&lt;div style="padding:5px;"&gt;
+										    
+											&lt;form method="POST" action="/cmp/j_acegi_security_check"&gt;
+											&lt;br /&gt;&lt;table&gt;
+												&lt;tbody&gt;&lt;tr&gt;
+													&lt;td&gt;User:&lt;/td&gt;
+													&lt;td colspan="2"&gt;&lt;input type="text" name="j_username" id="j_username" /&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+												&lt;tr&gt;
+													&lt;td&gt;Password:&lt;/td&gt;
+													&lt;td&gt;&lt;input type="password" autocomplete="off" name="j_password" /&gt;&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+											    &lt;tr&gt;
+											       &lt;td colspan="3"&gt;&lt;button onclick="submit()" class="gwt-Button" type="submit"&gt;Login&lt;/button&gt;&lt;/td&gt;
+											    &lt;/tr&gt;
+											
+											    &lt;tr&gt;
+											        
+      												&lt;td colspan="3"&gt; 
+      												    &lt;a style="color: black;" href="forgot_password.action?b="&gt;
+      												        Forgot password?
+      												    &lt;/a&gt;
+      												&lt;/td&gt;
+											    &lt;/tr&gt;
+											
+											&lt;/tbody&gt;&lt;/table&gt;
+											&lt;input type="hidden" name="locale" value="" /&gt;
+											&lt;/form&gt;
+											
+											&lt;script type="text/javascript"&gt;
+												&amp;lt;!--
+													document.getElementById("j_username").focus();
+												//--&amp;gt;
+												&lt;/script&gt;
+											    
+											&lt;/div&gt;
+											
+									&lt;/div&gt;
+									&lt;!-- /BODY --&gt;
+
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+			&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;&lt;/table&gt;
+		&lt;div style="clear:both"&gt;&lt;/div&gt;
+		&lt;div id="empty"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer" id="footer"&gt;
+	
+
+
+
+
+
+
+
+
+	
+
+
+	
+		Clarabridge Analyze, version 6.3.4.4#90544  © Copyright &lt;a target="_blank" href="http://www.clarabridge.com"&gt;Clarabridge&lt;/a&gt; 2005-2015
+		
+
+
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20150827 10:27:37.154" level="INFO">Current page contains button '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20150827 10:27:37.155" starttime="20150827 10:27:36.004"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:37.156" starttime="20150827 10:27:28.987"></status>
+</kw>
+<kw name="Login" library="LoginUI">
+<arguments>
+<arg>${login}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${USERNAME_TEXTBOX_LOCATOR}</arg>
+<arg>${login}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:37.160" level="INFO">Typing text 'EeaeAd' into text field 'j_username'</msg>
+<status status="PASS" endtime="20150827 10:27:37.906" starttime="20150827 10:27:37.158"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${PASSWORD_TEXTBOX_LOCATOR}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:37.909" level="INFO">Typing password into text field 'j_password'</msg>
+<status status="PASS" endtime="20150827 10:27:38.861" starttime="20150827 10:27:37.907"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:38.864" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20150827 10:27:40.427" starttime="20150827 10:27:38.862"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:40.428" starttime="20150827 10:27:37.156"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:40.429" starttime="20150827 10:27:28.985"></status>
+</kw>
+<kw name="Check That User Is Not Able To Login" library="LoginUI">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:40.689" level="INFO">Current page contains element '//font[text()='Incorrect login or password.']'.</msg>
+<status status="PASS" endtime="20150827 10:27:40.690" starttime="20150827 10:27:40.432"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:40.691" starttime="20150827 10:27:40.431"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20150827 10:27:41.006" starttime="20150827 10:27:40.692"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:41.007" critical="yes" starttime="20150827 10:27:26.744"></status>
+</test>
+<test id="s1-t3" name="TC3_User_could_get_proper_error_if_enter_incorrect_login">
+<kw type="setup" name="Generate User Data And Create User">
+<kw name="Generate User Data" library="UserDataGenerator">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${userName}</var>
+</assign>
+<msg timestamp="20150827 10:27:41.016" level="INFO">${userName} = HcjfZk</msg>
+<status status="PASS" endtime="20150827 10:27:41.016" starttime="20150827 10:27:41.014"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>7</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${userRandomPassword}</var>
+</assign>
+<msg timestamp="20150827 10:27:41.019" level="INFO">${userRandomPassword} = 9nYinzb</msg>
+<status status="PASS" endtime="20150827 10:27:41.020" starttime="20150827 10:27:41.017"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>U1${userRandomPassword}</arg>
+</arguments>
+<assign>
+<var>${userPassword}</var>
+</assign>
+<msg timestamp="20150827 10:27:41.022" level="INFO">${userPassword} = U19nYinzb</msg>
+<status status="PASS" endtime="20150827 10:27:41.023" starttime="20150827 10:27:41.020"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}@clarabridge.com</arg>
+</arguments>
+<assign>
+<var>${userEmail}</var>
+</assign>
+<msg timestamp="20150827 10:27:41.025" level="INFO">${userEmail} = HcjfZk@clarabridge.com</msg>
+<status status="PASS" endtime="20150827 10:27:41.026" starttime="20150827 10:27:41.023"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<assign>
+<var>${firstName}</var>
+</assign>
+<msg timestamp="20150827 10:27:41.029" level="INFO">${firstName} = HcjfZk</msg>
+<status status="PASS" endtime="20150827 10:27:41.030" starttime="20150827 10:27:41.027"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<assign>
+<var>${lastName}</var>
+</assign>
+<msg timestamp="20150827 10:27:41.032" level="INFO">${lastName} = HcjfZk</msg>
+<status status="PASS" endtime="20150827 10:27:41.033" starttime="20150827 10:27:41.031"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:41.035" level="INFO">${userName} = HcjfZk</msg>
+<status status="PASS" endtime="20150827 10:27:41.036" starttime="20150827 10:27:41.034"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userPassword}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:41.038" level="INFO">${userPassword} = U19nYinzb</msg>
+<status status="PASS" endtime="20150827 10:27:41.039" starttime="20150827 10:27:41.037"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userEmail}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:41.041" level="INFO">${userEmail} = HcjfZk@clarabridge.com</msg>
+<status status="PASS" endtime="20150827 10:27:41.041" starttime="20150827 10:27:41.039"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${firstName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:41.043" level="INFO">${firstName} = HcjfZk</msg>
+<status status="PASS" endtime="20150827 10:27:41.044" starttime="20150827 10:27:41.042"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${lastName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:41.046" level="INFO">${lastName} = HcjfZk</msg>
+<status status="PASS" endtime="20150827 10:27:41.047" starttime="20150827 10:27:41.045"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:41.048" starttime="20150827 10:27:41.013"></status>
+</kw>
+<kw name="Create User API" library="UserAPI">
+<kw name="Create User Object" library="Libs">
+<arguments>
+<arg>${userName}</arg>
+<arg>${userPassword}</arg>
+<arg>${userEmail}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20150827 10:27:41.052" level="INFO">${user} = {'id': None, 'autoRefreshEnabled': None, 'zip': None, 'state': None, 'address1': None, 'accountId': 0, 'company': None, 'liteUser': None, 'jobTitle': None, 'address2': None, 'phone': None, 'autoRefres...</msg>
+<status status="PASS" endtime="20150827 10:27:41.053" starttime="20150827 10:27:41.050"></status>
+</kw>
+<kw name="Create User" library="Libs">
+<arguments>
+<arg>${HOST}</arg>
+<arg>${PORT}</arg>
+<arg>${ADMIN_USER}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+<arg>${user}</arg>
+</arguments>
+<assign>
+<var>${userId}</var>
+</assign>
+<msg timestamp="20150827 10:27:41.057" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20150827 10:27:42.189" level="INFO">${userId} = 1855</msg>
+<status status="PASS" endtime="20150827 10:27:42.189" starttime="20150827 10:27:41.054"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${userId}</arg>
+</arguments>
+<assign>
+<var>${user.userId}</var>
+</assign>
+<msg timestamp="20150827 10:27:42.192" level="INFO">${user.userId} = 1855</msg>
+<status status="PASS" endtime="20150827 10:27:42.192" starttime="20150827 10:27:42.190"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:42.194" level="INFO">${user} = {'userId': 1855, 'id': None, 'autoRefreshEnabled': None, 'zip': None, 'state': None, 'address1': None, 'accountId': 0, 'company': None, 'liteUser': None, 'jobTitle': None, 'address2': None, 'phone': N...</msg>
+<status status="PASS" endtime="20150827 10:27:42.195" starttime="20150827 10:27:42.193"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:42.196" starttime="20150827 10:27:41.048"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:42.197" starttime="20150827 10:27:41.012"></status>
+</kw>
+<kw name="Login UI" library="LoginUI">
+<arguments>
+<arg>${CMP_LOGIN_URL}</arg>
+<arg>${WEB_BROWSER}</arg>
+<arg>${IncorrectLogin}</arg>
+<arg>${user.password}</arg>
+</arguments>
+<kw name="Open Login Page" library="LoginUI">
+<arguments>
+<arg>${loginUrl}</arg>
+<arg>${browser}</arg>
+</arguments>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${SELENIUM_SPEED}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:42.205" starttime="20150827 10:27:42.203"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets Selenium 2's default implicit wait in seconds and</doc>
+<arguments>
+<arg>${IMPLICIT_WAIT}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:42.207" starttime="20150827 10:27:42.206"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="Selenium2Library">
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<arguments>
+<arg>${SELENIUM_DEFAULT_TIMEOUT}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:42.210" starttime="20150827 10:27:42.208"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${loginUrl}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:42.212" level="INFO">Opening browser 'firefox' to base url 'http://localhost:18081/cmp/login'</msg>
+<status status="PASS" endtime="20150827 10:27:48.856" starttime="20150827 10:27:42.211"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20150827 10:27:49.130" starttime="20150827 10:27:48.857"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:49.876" level="INFO">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;
+  &lt;title&gt;
+
+
+
+
+
+
+
+
+
+	
+    
+        
+    	
+	
+
+
+Clarabridge Analyze
+
+&lt;/title&gt;
+  &lt;link type="image/x-icon" rel="icon" href="images/favicon.ico" /&gt;
+  &lt;link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico" /&gt;
+  &lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /&gt;    
+  &lt;meta content="IE=9" http-equiv="X-UA-Compatible" /&gt;
+  &lt;link href="css/style.css?b=" rel="stylesheet" /&gt;
+  &lt;script type="text/javascript" language="JavaScript" src="javascript/script.js"&gt;&lt;/script&gt;
+  &lt;style&gt;
+
+	html, body{
+		height:100%;
+		width:100%;
+		padding:0;
+		margin:0;
+	}
+
+	input[type=text], input[type=password] {
+		width: 150px;
+	}
+
+	#contaner{
+		width:100%;
+		margin:0 auto;
+		min-height:100%;
+		position:relative;
+		overflow:hidden;
+	}
+
+	*html #container{
+		height:100%;
+	}
+
+	#empty{
+		height:30px;
+	}
+
+	#footer{
+		min-height:23px;
+		margin:-30px auto 0;
+		width:100%;
+		position:relative;
+		text-align:center;
+		padding-top:7px;
+		height:23px;
+	}
+
+
+  &lt;/style&gt;
+
+
+&lt;/head&gt;
+&lt;body&gt;
+
+
+
+&lt;div id="contaner"&gt;
+				&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+				&lt;tbody&gt;&lt;tr height="55px" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="3" border="0" width="100%" height="100%" class="loginHeader"&gt;
+							&lt;tbody&gt;&lt;tr valign="middle"&gt;
+								&lt;!-- NAME --&gt;
+								&lt;td width="15%" valign="middle" style="padding-left:10px"&gt;
+									&lt;div style="position:relative;float:left"&gt;
+										&lt;a href="projects"&gt;&lt;img border="0" alt="" src="images/logo.gif?b=" /&gt;&lt;/a&gt;
+									&lt;/div&gt;
+								&lt;/td&gt;
+								&lt;!-- /NAME --&gt;
+								&lt;!-- TOP --&gt;
+								&lt;td valign="middle"&gt;
+									
+								&lt;/td&gt;
+								
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+				&lt;tr height="5px" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+							&lt;tbody&gt;&lt;tr&gt;
+								&lt;td class="delimiterGradiented"&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+				&lt;tr height="100%" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+				&lt;tbody&gt;&lt;tr&gt;
+					&lt;td width="100%" valign="top" height="100%"&gt;
+
+
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+							&lt;tbody&gt;&lt;tr&gt;
+								&lt;td&gt;
+									&lt;table cellspacing="0" cellpadding="0" border="0" width="100%"&gt;
+										&lt;tbody&gt;&lt;tr&gt;
+											&lt;!-- HISTORY --&gt;
+											&lt;td width="60%" valign="top"&gt;
+											&lt;/td&gt;
+											&lt;!-- /HISTORY --&gt;
+											&lt;td width="40%" valign="top" align="right"&gt;
+												&lt;!-- LINKS --&gt;
+												
+												&lt;!-- /LINKS--&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td width="100%" align="center" colspan="2"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td valign="top" align="left" colspan="2"&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;table cellspacing="0" cellpadding="0" border="0" width="100%"&gt;
+										&lt;tbody&gt;&lt;tr&gt;
+											&lt;td width="100%"&gt;
+												&lt;!-- SEARCH --&gt;
+												
+												&lt;!-- /SEARCH --&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr height="100%" width="100%"&gt;
+								&lt;td valign="top"&gt;
+
+									&lt;!-- TOP MESSAGE --&gt;
+										
+									&lt;!-- /TOP MESSAGE --&gt;
+									
+									&lt;!-- BODY --&gt;
+									&lt;div style="margin-top:10"&gt;
+											
+										&lt;div style="padding:5px;"&gt;
+										    
+											&lt;form method="POST" action="/cmp/j_acegi_security_check"&gt;
+											&lt;br /&gt;&lt;table&gt;
+												&lt;tbody&gt;&lt;tr&gt;
+													&lt;td&gt;User:&lt;/td&gt;
+													&lt;td colspan="2"&gt;&lt;input type="text" name="j_username" id="j_username" /&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+												&lt;tr&gt;
+													&lt;td&gt;Password:&lt;/td&gt;
+													&lt;td&gt;&lt;input type="password" autocomplete="off" name="j_password" /&gt;&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+											    &lt;tr&gt;
+											       &lt;td colspan="3"&gt;&lt;button onclick="submit()" class="gwt-Button" type="submit"&gt;Login&lt;/button&gt;&lt;/td&gt;
+											    &lt;/tr&gt;
+											
+											    &lt;tr&gt;
+											        
+      												&lt;td colspan="3"&gt; 
+      												    &lt;a style="color: black;" href="forgot_password.action?b="&gt;
+      												        Forgot password?
+      												    &lt;/a&gt;
+      												&lt;/td&gt;
+											    &lt;/tr&gt;
+											
+											&lt;/tbody&gt;&lt;/table&gt;
+											&lt;input type="hidden" name="locale" value="" /&gt;
+											&lt;/form&gt;
+											
+											&lt;script type="text/javascript"&gt;
+												&amp;lt;!--
+													document.getElementById("j_username").focus();
+												//--&amp;gt;
+												&lt;/script&gt;
+											    
+											&lt;/div&gt;
+											
+									&lt;/div&gt;
+									&lt;!-- /BODY --&gt;
+
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+			&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;&lt;/table&gt;
+		&lt;div style="clear:both"&gt;&lt;/div&gt;
+		&lt;div id="empty"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer" id="footer"&gt;
+	
+
+
+
+
+
+
+
+
+	
+
+
+	
+		Clarabridge Analyze, version 6.3.4.4#90544  © Copyright &lt;a target="_blank" href="http://www.clarabridge.com"&gt;Clarabridge&lt;/a&gt; 2005-2015
+		
+
+
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20150827 10:27:50.301" level="INFO">Current page contains button '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20150827 10:27:50.302" starttime="20150827 10:27:49.131"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:50.303" starttime="20150827 10:27:42.201"></status>
+</kw>
+<kw name="Login" library="LoginUI">
+<arguments>
+<arg>${login}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${USERNAME_TEXTBOX_LOCATOR}</arg>
+<arg>${login}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:50.307" level="INFO">Typing text 'IncorrectLogin' into text field 'j_username'</msg>
+<status status="PASS" endtime="20150827 10:27:51.085" starttime="20150827 10:27:50.306"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${PASSWORD_TEXTBOX_LOCATOR}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:51.088" level="INFO">Typing password into text field 'j_password'</msg>
+<status status="PASS" endtime="20150827 10:27:52.157" starttime="20150827 10:27:51.087"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:52.159" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20150827 10:27:53.764" starttime="20150827 10:27:52.158"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:53.765" starttime="20150827 10:27:50.303"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:53.766" starttime="20150827 10:27:42.198"></status>
+</kw>
+<kw name="Check That User Is Not Able To Login" library="LoginUI">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:53.990" level="INFO">Current page contains element '//font[text()='Incorrect login or password.']'.</msg>
+<status status="PASS" endtime="20150827 10:27:53.991" starttime="20150827 10:27:53.769"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:53.992" starttime="20150827 10:27:53.768"></status>
+</kw>
+<kw type="teardown" name="Close Browser And Delete User">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20150827 10:27:54.300" starttime="20150827 10:27:53.995"></status>
+</kw>
+<kw name="Delete User API" library="UserAPI">
+<kw name="Delete User" library="Libs">
+<arguments>
+<arg>${HOST}</arg>
+<arg>${PORT}</arg>
+<arg>${ADMIN_USER}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+<arg>${user.userId}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20150827 10:27:54.306" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20150827 10:27:55.358" level="INFO">${status} = Accepted</msg>
+<status status="PASS" endtime="20150827 10:27:55.358" starttime="20150827 10:27:54.302"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status}</arg>
+<arg>Accepted</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:55.361" starttime="20150827 10:27:55.359"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:55.362" starttime="20150827 10:27:54.301"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:55.363" starttime="20150827 10:27:53.993"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:55.364" critical="yes" starttime="20150827 10:27:41.010"></status>
+</test>
+<test id="s1-t4" name="TC3_User_could_get_proper_error_if_enter_incorrect_password">
+<kw type="setup" name="Generate User Data And Create User">
+<kw name="Generate User Data" library="UserDataGenerator">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>6</arg>
+<arg>[LETTERS]</arg>
+</arguments>
+<assign>
+<var>${userName}</var>
+</assign>
+<msg timestamp="20150827 10:27:55.374" level="INFO">${userName} = WyfERq</msg>
+<status status="PASS" endtime="20150827 10:27:55.374" starttime="20150827 10:27:55.372"></status>
+</kw>
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>7</arg>
+<arg>[LETTERS][NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${userRandomPassword}</var>
+</assign>
+<msg timestamp="20150827 10:27:55.377" level="INFO">${userRandomPassword} = t72Ct26</msg>
+<status status="PASS" endtime="20150827 10:27:55.377" starttime="20150827 10:27:55.375"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>U1${userRandomPassword}</arg>
+</arguments>
+<assign>
+<var>${userPassword}</var>
+</assign>
+<msg timestamp="20150827 10:27:55.380" level="INFO">${userPassword} = U1t72Ct26</msg>
+<status status="PASS" endtime="20150827 10:27:55.380" starttime="20150827 10:27:55.378"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}@clarabridge.com</arg>
+</arguments>
+<assign>
+<var>${userEmail}</var>
+</assign>
+<msg timestamp="20150827 10:27:55.383" level="INFO">${userEmail} = WyfERq@clarabridge.com</msg>
+<status status="PASS" endtime="20150827 10:27:55.383" starttime="20150827 10:27:55.381"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<assign>
+<var>${firstName}</var>
+</assign>
+<msg timestamp="20150827 10:27:55.387" level="INFO">${firstName} = WyfERq</msg>
+<status status="PASS" endtime="20150827 10:27:55.387" starttime="20150827 10:27:55.385"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<assign>
+<var>${lastName}</var>
+</assign>
+<msg timestamp="20150827 10:27:55.390" level="INFO">${lastName} = WyfERq</msg>
+<status status="PASS" endtime="20150827 10:27:55.390" starttime="20150827 10:27:55.388"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:55.392" level="INFO">${userName} = WyfERq</msg>
+<status status="PASS" endtime="20150827 10:27:55.393" starttime="20150827 10:27:55.391"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userPassword}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:55.395" level="INFO">${userPassword} = U1t72Ct26</msg>
+<status status="PASS" endtime="20150827 10:27:55.396" starttime="20150827 10:27:55.394"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${userEmail}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:55.398" level="INFO">${userEmail} = WyfERq@clarabridge.com</msg>
+<status status="PASS" endtime="20150827 10:27:55.399" starttime="20150827 10:27:55.397"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${firstName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:55.401" level="INFO">${firstName} = WyfERq</msg>
+<status status="PASS" endtime="20150827 10:27:55.402" starttime="20150827 10:27:55.400"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${lastName}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:55.404" level="INFO">${lastName} = WyfERq</msg>
+<status status="PASS" endtime="20150827 10:27:55.405" starttime="20150827 10:27:55.403"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:55.406" starttime="20150827 10:27:55.371"></status>
+</kw>
+<kw name="Create User API" library="UserAPI">
+<kw name="Create User Object" library="Libs">
+<arguments>
+<arg>${userName}</arg>
+<arg>${userPassword}</arg>
+<arg>${userEmail}</arg>
+<arg>${firstName}</arg>
+<arg>${lastName}</arg>
+</arguments>
+<assign>
+<var>${user}</var>
+</assign>
+<msg timestamp="20150827 10:27:55.411" level="INFO">${user} = {'id': None, 'autoRefreshEnabled': None, 'zip': None, 'state': None, 'address1': None, 'accountId': 0, 'company': None, 'liteUser': None, 'jobTitle': None, 'address2': None, 'phone': None, 'autoRefres...</msg>
+<status status="PASS" endtime="20150827 10:27:55.411" starttime="20150827 10:27:55.408"></status>
+</kw>
+<kw name="Create User" library="Libs">
+<arguments>
+<arg>${HOST}</arg>
+<arg>${PORT}</arg>
+<arg>${ADMIN_USER}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+<arg>${user}</arg>
+</arguments>
+<assign>
+<var>${userId}</var>
+</assign>
+<msg timestamp="20150827 10:27:55.416" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20150827 10:27:56.556" level="INFO">${userId} = 1856</msg>
+<status status="PASS" endtime="20150827 10:27:56.556" starttime="20150827 10:27:55.412"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${userId}</arg>
+</arguments>
+<assign>
+<var>${user.userId}</var>
+</assign>
+<msg timestamp="20150827 10:27:56.559" level="INFO">${user.userId} = 1856</msg>
+<status status="PASS" endtime="20150827 10:27:56.559" starttime="20150827 10:27:56.557"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:56.561" level="INFO">${user} = {'userId': 1856, 'id': None, 'autoRefreshEnabled': None, 'zip': None, 'state': None, 'address1': None, 'accountId': 0, 'company': None, 'liteUser': None, 'jobTitle': None, 'address2': None, 'phone': N...</msg>
+<status status="PASS" endtime="20150827 10:27:56.562" starttime="20150827 10:27:56.560"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:56.563" starttime="20150827 10:27:55.406"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:27:56.564" starttime="20150827 10:27:55.369"></status>
+</kw>
+<kw name="Login UI" library="LoginUI">
+<arguments>
+<arg>${CMP_LOGIN_URL}</arg>
+<arg>${WEB_BROWSER}</arg>
+<arg>${user.login}</arg>
+<arg>${IncorrectPassword}</arg>
+</arguments>
+<kw name="Open Login Page" library="LoginUI">
+<arguments>
+<arg>${loginUrl}</arg>
+<arg>${browser}</arg>
+</arguments>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${SELENIUM_SPEED}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:56.572" starttime="20150827 10:27:56.570"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets Selenium 2's default implicit wait in seconds and</doc>
+<arguments>
+<arg>${IMPLICIT_WAIT}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:56.574" starttime="20150827 10:27:56.573"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="Selenium2Library">
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<arguments>
+<arg>${SELENIUM_DEFAULT_TIMEOUT}</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:27:56.577" starttime="20150827 10:27:56.575"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${loginUrl}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20150827 10:27:56.580" level="INFO">Opening browser 'firefox' to base url 'http://localhost:18081/cmp/login'</msg>
+<status status="PASS" endtime="20150827 10:28:03.316" starttime="20150827 10:27:56.578"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20150827 10:28:03.595" starttime="20150827 10:28:03.317"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:28:04.333" level="INFO">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;
+  &lt;title&gt;
+
+
+
+
+
+
+
+
+
+	
+    
+        
+    	
+	
+
+
+Clarabridge Analyze
+
+&lt;/title&gt;
+  &lt;link type="image/x-icon" rel="icon" href="images/favicon.ico" /&gt;
+  &lt;link type="image/x-icon" rel="shortcut icon" href="images/favicon.ico" /&gt;
+  &lt;meta content="text/html; charset=UTF-8" http-equiv="Content-Type" /&gt;    
+  &lt;meta content="IE=9" http-equiv="X-UA-Compatible" /&gt;
+  &lt;link href="css/style.css?b=" rel="stylesheet" /&gt;
+  &lt;script type="text/javascript" language="JavaScript" src="javascript/script.js"&gt;&lt;/script&gt;
+  &lt;style&gt;
+
+	html, body{
+		height:100%;
+		width:100%;
+		padding:0;
+		margin:0;
+	}
+
+	input[type=text], input[type=password] {
+		width: 150px;
+	}
+
+	#contaner{
+		width:100%;
+		margin:0 auto;
+		min-height:100%;
+		position:relative;
+		overflow:hidden;
+	}
+
+	*html #container{
+		height:100%;
+	}
+
+	#empty{
+		height:30px;
+	}
+
+	#footer{
+		min-height:23px;
+		margin:-30px auto 0;
+		width:100%;
+		position:relative;
+		text-align:center;
+		padding-top:7px;
+		height:23px;
+	}
+
+
+  &lt;/style&gt;
+
+
+&lt;/head&gt;
+&lt;body&gt;
+
+
+
+&lt;div id="contaner"&gt;
+				&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+				&lt;tbody&gt;&lt;tr height="55px" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="3" border="0" width="100%" height="100%" class="loginHeader"&gt;
+							&lt;tbody&gt;&lt;tr valign="middle"&gt;
+								&lt;!-- NAME --&gt;
+								&lt;td width="15%" valign="middle" style="padding-left:10px"&gt;
+									&lt;div style="position:relative;float:left"&gt;
+										&lt;a href="projects"&gt;&lt;img border="0" alt="" src="images/logo.gif?b=" /&gt;&lt;/a&gt;
+									&lt;/div&gt;
+								&lt;/td&gt;
+								&lt;!-- /NAME --&gt;
+								&lt;!-- TOP --&gt;
+								&lt;td valign="middle"&gt;
+									
+								&lt;/td&gt;
+								
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+				&lt;tr height="5px" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+							&lt;tbody&gt;&lt;tr&gt;
+								&lt;td class="delimiterGradiented"&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+				&lt;tr height="100%" width="100%"&gt;
+					&lt;td&gt;
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+				&lt;tbody&gt;&lt;tr&gt;
+					&lt;td width="100%" valign="top" height="100%"&gt;
+
+
+						&lt;table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"&gt;
+							&lt;tbody&gt;&lt;tr&gt;
+								&lt;td&gt;
+									&lt;table cellspacing="0" cellpadding="0" border="0" width="100%"&gt;
+										&lt;tbody&gt;&lt;tr&gt;
+											&lt;!-- HISTORY --&gt;
+											&lt;td width="60%" valign="top"&gt;
+											&lt;/td&gt;
+											&lt;!-- /HISTORY --&gt;
+											&lt;td width="40%" valign="top" align="right"&gt;
+												&lt;!-- LINKS --&gt;
+												
+												&lt;!-- /LINKS--&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td width="100%" align="center" colspan="2"&gt;&lt;/td&gt;
+										&lt;/tr&gt;
+										&lt;tr&gt;
+											&lt;td valign="top" align="left" colspan="2"&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+
+							&lt;tr&gt;
+								&lt;td&gt;
+									&lt;table cellspacing="0" cellpadding="0" border="0" width="100%"&gt;
+										&lt;tbody&gt;&lt;tr&gt;
+											&lt;td width="100%"&gt;
+												&lt;!-- SEARCH --&gt;
+												
+												&lt;!-- /SEARCH --&gt;
+											&lt;/td&gt;
+										&lt;/tr&gt;
+									&lt;/tbody&gt;&lt;/table&gt;
+								&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;tr height="100%" width="100%"&gt;
+								&lt;td valign="top"&gt;
+
+									&lt;!-- TOP MESSAGE --&gt;
+										
+									&lt;!-- /TOP MESSAGE --&gt;
+									
+									&lt;!-- BODY --&gt;
+									&lt;div style="margin-top:10"&gt;
+											
+										&lt;div style="padding:5px;"&gt;
+										    
+											&lt;form method="POST" action="/cmp/j_acegi_security_check"&gt;
+											&lt;br /&gt;&lt;table&gt;
+												&lt;tbody&gt;&lt;tr&gt;
+													&lt;td&gt;User:&lt;/td&gt;
+													&lt;td colspan="2"&gt;&lt;input type="text" name="j_username" id="j_username" /&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+												&lt;tr&gt;
+													&lt;td&gt;Password:&lt;/td&gt;
+													&lt;td&gt;&lt;input type="password" autocomplete="off" name="j_password" /&gt;&lt;/td&gt;
+													&lt;td&gt;&lt;/td&gt;
+												&lt;/tr&gt;
+											    &lt;tr&gt;
+											       &lt;td colspan="3"&gt;&lt;button onclick="submit()" class="gwt-Button" type="submit"&gt;Login&lt;/button&gt;&lt;/td&gt;
+											    &lt;/tr&gt;
+											
+											    &lt;tr&gt;
+											        
+      												&lt;td colspan="3"&gt; 
+      												    &lt;a style="color: black;" href="forgot_password.action?b="&gt;
+      												        Forgot password?
+      												    &lt;/a&gt;
+      												&lt;/td&gt;
+											    &lt;/tr&gt;
+											
+											&lt;/tbody&gt;&lt;/table&gt;
+											&lt;input type="hidden" name="locale" value="" /&gt;
+											&lt;/form&gt;
+											
+											&lt;script type="text/javascript"&gt;
+												&amp;lt;!--
+													document.getElementById("j_username").focus();
+												//--&amp;gt;
+												&lt;/script&gt;
+											    
+											&lt;/div&gt;
+											
+									&lt;/div&gt;
+									&lt;!-- /BODY --&gt;
+
+								&lt;/td&gt;
+							&lt;/tr&gt;
+						&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+
+			&lt;/tbody&gt;&lt;/table&gt;
+					&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;&lt;/table&gt;
+		&lt;div style="clear:both"&gt;&lt;/div&gt;
+		&lt;div id="empty"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="footer" id="footer"&gt;
+	
+
+
+
+
+
+
+
+
+	
+
+
+	
+		Clarabridge Analyze, version 6.3.4.4#90544  © Copyright &lt;a target="_blank" href="http://www.clarabridge.com"&gt;Clarabridge&lt;/a&gt; 2005-2015
+		
+
+
+
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20150827 10:28:04.758" level="INFO">Current page contains button '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20150827 10:28:04.759" starttime="20150827 10:28:03.596"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:28:04.760" starttime="20150827 10:27:56.568"></status>
+</kw>
+<kw name="Login" library="LoginUI">
+<arguments>
+<arg>${login}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${USERNAME_TEXTBOX_LOCATOR}</arg>
+<arg>${login}</arg>
+</arguments>
+<msg timestamp="20150827 10:28:04.764" level="INFO">Typing text 'WyfERq' into text field 'j_username'</msg>
+<status status="PASS" endtime="20150827 10:28:05.518" starttime="20150827 10:28:04.762"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>${PASSWORD_TEXTBOX_LOCATOR}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20150827 10:28:05.521" level="INFO">Typing password into text field 'j_password'</msg>
+<status status="PASS" endtime="20150827 10:28:06.464" starttime="20150827 10:28:05.519"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:28:06.466" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20150827 10:28:08.108" starttime="20150827 10:28:06.465"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:28:08.109" starttime="20150827 10:28:04.760"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:28:08.110" starttime="20150827 10:27:56.566"></status>
+</kw>
+<kw name="Check That User Is Not Able To Login" library="LoginUI">
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>${ERROR_MESSAGE_LOCATOR}</arg>
+</arguments>
+<msg timestamp="20150827 10:28:08.334" level="INFO">Current page contains element '//font[text()='Incorrect login or password.']'.</msg>
+<status status="PASS" endtime="20150827 10:28:08.335" starttime="20150827 10:28:08.113"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:28:08.336" starttime="20150827 10:28:08.112"></status>
+</kw>
+<kw type="teardown" name="Close Browser And Delete User">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20150827 10:28:08.653" starttime="20150827 10:28:08.339"></status>
+</kw>
+<kw name="Delete User API" library="UserAPI">
+<kw name="Delete User" library="Libs">
+<arguments>
+<arg>${HOST}</arg>
+<arg>${PORT}</arg>
+<arg>${ADMIN_USER}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+<arg>${user.userId}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20150827 10:28:08.659" level="INFO">Starting new HTTP connection (1): localhost</msg>
+<msg timestamp="20150827 10:28:09.711" level="INFO">${status} = Accepted</msg>
+<status status="PASS" endtime="20150827 10:28:09.712" starttime="20150827 10:28:08.655"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status}</arg>
+<arg>Accepted</arg>
+</arguments>
+<status status="PASS" endtime="20150827 10:28:09.715" starttime="20150827 10:28:09.713"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:28:09.716" starttime="20150827 10:28:08.653"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:28:09.717" starttime="20150827 10:28:08.337"></status>
+</kw>
+<status status="PASS" endtime="20150827 10:28:09.718" critical="yes" starttime="20150827 10:27:55.367"></status>
+</test>
+<status status="PASS" endtime="20150827 10:28:09.722" starttime="20150827 10:27:06.705"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="UserLogin" pass="4">UserLogin</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
